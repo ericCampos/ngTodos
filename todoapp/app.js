@@ -25,7 +25,7 @@ app.use(function(req,res,next){
   res.header("Access-Control-Allow-Headers", "Origin, W-Requested-With, Content-Type, Accept"),
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"),
   next();
-}):
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
