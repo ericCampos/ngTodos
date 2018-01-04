@@ -2,7 +2,7 @@
 var ToDo = require ('../models/todo.model')
 
 // Saves the context of this module under the variable _this
-_this = this
+var _this = this
 
 // Async function to get the To do List
 
@@ -70,7 +70,7 @@ exports.updateTodo = async function(todo){
         
     } catch (e) {
         
-        throw Error("Error ocurred while finding todo")
+        throw Error('Error ocurred while finding todo')
     }
     
     // If no oldTodo exists, return false
@@ -108,7 +108,7 @@ exports.deleteTodo = async function(id){
     
     try{
         
-        var deleted = await ToDo.remove({_id:id})
+        var deleted = await ToDo.remove({_id: id})
         
         if(deleted.result.n === 0){
             throw Error("Todo Could not be deleted")
@@ -119,6 +119,6 @@ exports.deleteTodo = async function(id){
         
     } catch (e) {
         
-        throw Error("Error ocurred while deleting the Todo");
+        throw Error("Error ocurred while deleting the Todo: " + e.message + " - " + deleted.result);
     }
 }
